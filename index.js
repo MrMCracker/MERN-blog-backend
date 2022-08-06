@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cors())
 app.use("/uploads", express.static("uploads"))
 
-mongoose.connect("mongodb+srv://admin:wwwwww@cluster0.jaxovnp.mongodb.net/blog?retryWrites=true&w=majority") //mongodb+srv://admin:wwwwww@cluster0.jaxovnp.mongodb.net/blog?retryWrites=true&w=majority
+mongoose.connect(process.env.MONGODB_URI) //mongodb+srv://admin:wwwwww@cluster0.jaxovnp.mongodb.net/blog?retryWrites=true&w=majority
     .then(() => {
         console.log("Подключение к БД прошло успешно!")
     })
